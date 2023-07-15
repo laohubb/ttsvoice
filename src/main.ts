@@ -6,8 +6,9 @@ import App from './App.vue'
 import 'normalize.css'
 
 import VConsole from 'vconsole';
-
+// @ts-ignore
 if (process.env.NODE_ENV === 'development') {
+    // @ts-ignore
     const vConsole = new VConsole();
 }
 

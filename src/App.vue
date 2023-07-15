@@ -4,11 +4,11 @@ import axios from 'axios';
 
 let text = ref('');
 let audioRef = ref<HTMLAudioElement | null>(null);
-const convertBlobToDataURL = (blob) => {
+const convertBlobToDataURL = (blob: Blob): Promise<string> => {
   return new Promise((resolve, reject) => {
     const reader = new FileReader();
     reader.onerror = reject;
-    reader.onload = () => resolve(reader.result);
+    reader.onload = () => resolve(reader.result as string);
     reader.readAsDataURL(blob);
   });
 };
