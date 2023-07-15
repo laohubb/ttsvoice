@@ -7,7 +7,7 @@ let audioRef = ref<HTMLAudioElement | null>(null);
 
 const textToSpeech = async () => {
   const response = await axios.post(
-      "http://localhost:3000/synthesize",
+      "https://asia-east1-ms-tts.cloudfunctions.net/ms-tts/synthesize",
       {
         text: text.value,
       },
