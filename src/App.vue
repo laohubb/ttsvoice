@@ -4,7 +4,14 @@ import axios from 'axios';
 
 let text = ref('');
 let audioRef = ref<HTMLAudioElement | null>(null);
-
+const convertBlobToDataURL = (blob) => {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onerror = reject;
+    reader.onload = () => resolve(reader.result);
+    reader.readAsDataURL(blob);
+  });
+};
 const textToSpeech = async () => {
   const response = await axios.post(
       "https://asia-east1-ms-tts.cloudfunctions.net/ms-tts/synthesize",
@@ -13,10 +20,10 @@ const textToSpeech = async () => {
       },
       { responseType: "blob" }
   );
+  const dataURL = await convertBlobToDataURL(response.data);
 
-  const url = window.URL.createObjectURL(new Blob([response.data]));
   if (audioRef.value) {
-    audioRef.value.src = url;
+    audioRef.value.src = dataURL;
     await audioRef.value.play();
   }
 };
