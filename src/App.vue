@@ -122,7 +122,7 @@ const randomQuote = async () => {
     text.value = response.data.data; // 假设返回的数据中含有 text 字段
     setTimeout(() => {
       textToSpeech();
-    }, 2000);
+    }, 500);
 
   } catch (error) {
     console.error('There has been a problem with your fetch operation:', error);
