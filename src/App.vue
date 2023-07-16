@@ -13,8 +13,9 @@ const convertBlobToDataURL = (blob: Blob): Promise<string> => {
   });
 };
 const textToSpeech = async () => {
+
   const response = await axios.post(
-      "https://asia-east1-ms-tts.cloudfunctions.net/ms-tts/synthesize",
+      import.meta.env.VITE_APP_API_URL,
       {
         text: text.value,
       },
