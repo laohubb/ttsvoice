@@ -11,11 +11,13 @@
   "dependencies": {
     "axios": "^1.4.0",
     "fonts.css": "^2.0.0",
+    "franc-min": "^6.1.0",
     "normalize.css": "^8.0.1",
     "vconsole": "^3.15.1",
     "vue": "^3.3.4"
   },
   "devDependencies": {
+    "@types/node": "^20.4.2",
     "@vitejs/plugin-vue": "^4.2.3",
     "autoprefixer": "^10.4.14",
     "postcss": "^8.4.25",
