@@ -29,7 +29,7 @@ const voiceOptions:{ [key: string]: string[]; }  = reactive({
     'zh-CN-YunzeNeural'
   ],
   'en-US':  [
-    'en-US-JennyMultilingualNeural3',
+    'en-US-JennyMultilingualNeural',
     'en-US-JennyNeural',
     'en-US-GuyNeural',
     'en-US-AriaNeural',
