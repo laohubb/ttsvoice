@@ -78,7 +78,7 @@ let inputLanguage = ref('zh-CN');
 let availableVoices = ref(voiceOptions[inputLanguage.value]);
 
 
-let voice = ref('zh');
+let voice = ref('zh-CN-XiaoxiaoNeural');
 
 const languageMap: { [key: string]: string } = {
   cmn: 'zh-CN',
